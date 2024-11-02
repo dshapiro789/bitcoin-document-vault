@@ -25,13 +25,57 @@ BTC Doc Vault is a secure document management system that leverages Bitcoin's bl
 - **Download Protection**: Secure document download with authentication
 - **Responsive Design**: Works seamlessly across desktop and mobile devices
 
-## Technology Stack
-- **Frontend**: Next.js, TypeScript, TailwindCSS
-- **Backend**: Node.js, Express, TypeScript
-- **Database**: MongoDB, Supabase
-- **Storage**: Supabase Storage
-- **Authentication**: Session-based with Bitcoin wallet integration
-- **Blockchain**: Bitcoin Mainnet
+# Languages & Technologies in BTC Doc Vault
+
+## Frontend
+- **TypeScript** (Primary language)
+- **JavaScript (ES6+)**
+- **HTML5**
+- **CSS3**
+  - TailwindCSS for styling
+  - CSS Modules for component-specific styles
+
+## Backend
+- **TypeScript** (Primary language)
+- **JavaScript (ES6+)**
+- **SQL** (for Supabase database queries)
+
+## Database
+- **MongoDB** (NoSQL)
+  - MongoDB Query Language
+- **PostgreSQL** (via Supabase)
+  - SQL for database operations
+
+## Smart Contracts
+- **Bitcoin Script** (for time-lock contracts)
+
+## Configuration
+- **JSON** (package configuration, tsconfig)
+- **YAML** (deployment configurations)
+- **ENV** (environment variables)
+
+## Testing
+- **Jest** (JavaScript/TypeScript testing)
+- **Cypress** (E2E testing)
+
+## Documentation
+- **Markdown** (README, documentation)
+- **JSDoc** (code documentation)
+
+## Version Control
+- **Git** (version control)
+
+## Package Management
+- **NPM** (Node Package Manager)
+
+## Build Tools
+- **Webpack** (bundling)
+- **Babel** (JavaScript compilation)
+- **TypeScript Compiler**
+
+## API
+- **REST API**
+- **JSON** (data format)
 
 ## Prerequisites
 - Node.js (v16 or higher)
