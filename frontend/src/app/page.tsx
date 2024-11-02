@@ -103,7 +103,7 @@ export default function Home() {
           <FeatureCard 
             icon={<FiKey className="text-3xl mb-2 text-primary-orange mx-auto" />}
             title="Bitcoin-Based Authentication"
-            description="Use a Bitcoin seed and a custom passphrase to maintain control over your authentication credentials."
+            description="Use a Bitcoin seed and a custom passphrase to maintain control over your account credentials."
           />
           <FeatureCard 
             icon={<FiGithub className="text-3xl mb-2 text-primary-orange mx-auto" />}
