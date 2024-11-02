@@ -11,11 +11,12 @@ BTC Doc Vault is a secure document management system that leverages Bitcoin's bl
 <img width="1152" alt="4" src="https://github.com/user-attachments/assets/13deabbb-980d-4db5-91c4-40db45da7966">
 <img width="1152" alt="3" src="https://github.com/user-attachments/assets/e3be8f9b-d17c-48d5-b349-5db2cd0b801b">
 <img width="1152" alt="2" src="https://github.com/user-attachments/assets/d8c35541-1bc8-44cc-a4ac-9e30d75715f3">
+<img width="1152" alt="0" src="https://github.com/user-attachments/assets/ed0695d5-d290-4a51-a763-6499acdef26b">
 
 
 ## Features
 - **Secure Document Storage**: Upload and store documents with end-to-end encryption
-- **Bitcoin Integration**: Documents are secured using Bitcoin wallet integration
+- **Bitcoin Authentication**: Accounts are secured using a Bitcoin wallet 12-word randomized mnemonic seed and custom passphrase
 - **Time-Lock Contracts**: Set time-based access controls for documents using Bitcoin smart contracts
 - **Document Categories**: Organize documents with customizable categories
 - **Search & Filter**: Easily find documents using search and filtering options
