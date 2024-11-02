@@ -1,8 +1,8 @@
 {
     "version": 2,
-    "buildCommand": "cd frontend && npm install && npm run build",
+    "buildCommand": "cd frontend && npm ci && npm run build",
+    "installCommand": "cd frontend && npm ci",
     "outputDirectory": "frontend/.next",
-    "installCommand": "cd frontend && npm install",
     "builds": [
       {
         "src": "frontend/package.json",
