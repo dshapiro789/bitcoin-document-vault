@@ -1,4 +1,4 @@
-# BTC Doc Vault
+# BTC Doc Vault (Prototype | Proof of Concept)
 
 ## Overview
 BTC Doc Vault is a secure document management system that leverages Bitcoin's blockchain technology to provide tamper-proof document storage and verification. This application allows users to store, manage, and protect their important documents using Bitcoin-based encryption and time-lock contracts.
