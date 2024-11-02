@@ -1,5 +1,5 @@
 {
-  "name": "frontend",
+  "name": "btc-doc-vault",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -18,30 +18,46 @@
     "js-sha256": "^0.11.0",
     "next": "14.2.8",
     "qrcode.react": "^4.0.1",
-    "react": "^18",
+    "react": "^18.2.0",
     "react-chartjs-2": "^5.2.0",
-    "react-dom": "^18",
+    "react-dom": "^18.2.0",
     "react-icons": "^5.3.0",
-    "tiny-secp256k1": "^2.2.3"
+    "tiny-secp256k1": "^2.2.3",
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "typescript": "^5.0.0",
+    "@supabase/supabase-js": "^2.39.0",
+    "axios": "^1.6.0",
+    "date-fns": "^2.30.0",
+    "jsonwebtoken": "^9.0.0",
+    "react-dropzone": "^14.2.3",
+    "react-hot-toast": "^2.4.1"
   },
   "devDependencies": {
     "@types/bip32": "^2.0.0",
     "@types/bip39": "^3.0.0",
     "@types/bitcoinjs-lib": "^5.0.0",
     "@types/crypto-js": "^4.2.2",
+    "@types/jsonwebtoken": "^9.0.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.4.20",
-    "eslint": "^8",
+    "eslint": "^8.0.0",
     "eslint-config-next": "14.2.8",
     "postcss": "^8.4.45",
     "tailwindcss": "^3.4.10",
-    "typescript": "^5"
+    "typescript": "^5.0.0",
+    "@testing-library/jest-dom": "^6.1.0",
+    "@testing-library/react": "^14.0.0",
+    "@types/jest": "^29.5.0",
+    "jest": "^29.6.0",
+    "jest-environment-jsdom": "^29.6.0"
   },
   "main": "postcss.config.js",
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "Bitcoin Document Vault - Secure document storage using Bitcoin blockchain"
 }
