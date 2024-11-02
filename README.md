@@ -3,6 +3,16 @@
 ## Overview
 BTC Doc Vault is a secure document management system that leverages Bitcoin's blockchain technology to provide tamper-proof document storage and verification. This application allows users to store, manage, and protect their important documents using Bitcoin-based encryption and time-lock contracts.
 
+<img width="1152" alt="8" src="https://github.com/user-attachments/assets/1b468ce7-5809-4e8e-b1f4-f7c5c296d55e">
+<img width="1119" alt="7" src="https://github.com/user-attachments/assets/ff953050-95f3-43e3-8778-da12117dd1e3">
+<img width="1152" alt="6" src="https://github.com/user-attachments/assets/7c34bc82-4edd-4000-8c66-9f1dc5876337">
+<img width="1152" alt="5" src="https://github.com/user-attachments/assets/5ace96ab-6777-4556-9cf0-ab93f6a24ffa">
+<img width="1152" alt="4" src="https://github.com/user-attachments/assets/13deabbb-980d-4db5-91c4-40db45da7966">
+<img width="1152" alt="3" src="https://github.com/user-attachments/assets/e3be8f9b-d17c-48d5-b349-5db2cd0b801b">
+<img width="1152" alt="2" src="https://github.com/user-attachments/assets/d8c35541-1bc8-44cc-a4ac-9e30d75715f3">
+<img width="1152" alt="1" src="https://github.com/user-attachments/assets/5dcb7009-7ebc-4562-bbe4-6d16a7117216">
+
+
 ## Features
 - **Secure Document Storage**: Upload and store documents with end-to-end encryption
 - **Bitcoin Integration**: Documents are secured using Bitcoin wallet integration
