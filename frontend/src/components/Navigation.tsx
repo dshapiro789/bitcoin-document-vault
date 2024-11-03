@@ -38,10 +38,10 @@ const Navigation: React.FC = () => {
             </>
           ) : (
             <>
-              <Link href="/login" className="btn-outline">
+              <Link href="/login" className="text-white px-6 py-2 rounded-lg hover:bg-white hover:text-primary transition-colors">
                 Login
               </Link>
-              <Link href="/register" className="btn-primary">
+              <Link href="/register" className="text-white px-6 py-2 rounded-lg hover:bg-white hover:text-primary transition-colors">
                 Register
               </Link>
             </>

@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { FiShield, FiKey, FiGithub, FiUser, FiCheck } from 'react-icons/fi';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 interface FeatureCardProps {
   icon: React.ReactNode;
@@ -133,6 +134,30 @@ export default function Home() {
         <Link href="/register" className="btn-primary inline-block text-xl">
           Get Started Now
         </Link>
+      </div>
+
+      {/* New Donation Section */}
+      <div className="container mx-auto px-4 py-16 border-t border-gray-200">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-2xl font-bold mb-6 text-primary">Support Development</h2>
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+            <div className="w-48 h-48 relative">
+              <Image
+                src="/bitcoin-qr.png"  // Make sure to add the QR code image to your public folder
+                alt="Bitcoin Donation QR Code"
+                width={192}
+                height={192}
+                className="border-4 border-white shadow-lg rounded-lg"
+              />
+            </div>
+            <div className="flex-1 max-w-xl">
+              <p className="text-lg mb-3">Donate to further development via Bitcoin:</p>
+              <div className="bg-white p-4 rounded-lg shadow-md break-all text-sm font-mono">
+                sp1qqdak9clmvgxtrvcf36uwr93gddwwsyt734tsyemtf4xseeatxjuuwqm95sd7cctpt4ratnyg48c3n05ug5d5zfewlhf5kkaqzwkapn9wds8uh2w6
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
