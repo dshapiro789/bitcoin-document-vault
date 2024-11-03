@@ -8,6 +8,7 @@ const Login: React.FC = () => {
   const [mnemonic, setMnemonic] = useState('');
   const [passphrase, setPassphrase] = useState('');
   const [error, setError] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
   const { signIn, user, loading } = useAuth();
 
@@ -17,25 +18,10 @@ const Login: React.FC = () => {
     }
   }, [loading, user, router]);
 
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-background">
-        <div className="container mx-auto px-4 py-8">
-          <div className="card max-w-md mx-auto mt-10 text-center">
-            <div className="animate-pulse">
-              <div className="h-8 bg-gray-200 rounded w-1/2 mx-auto mb-6"></div>
-              <div className="h-4 bg-gray-200 rounded mb-4"></div>
-              <div className="h-4 bg-gray-200 rounded mb-4"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
+    setIsLoading(true);
 
     try {
       await signIn(mnemonic, passphrase);
@@ -43,6 +29,8 @@ const Login: React.FC = () => {
     } catch (error) {
       console.error('Login error:', error);
       setError(error instanceof Error ? error.message : 'An unknown error occurred during login');
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -77,8 +65,9 @@ const Login: React.FC = () => {
             <button 
               type="submit" 
               className="w-full bg-primary text-white py-3 px-6 rounded-lg hover:bg-primary-dark transition-colors"
+              disabled={isLoading}
             >
-              Login
+              {isLoading ? 'Logging in...' : 'Login'}
             </button>
           </form>
           {error && (

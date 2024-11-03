@@ -1,14 +1,12 @@
 'use client';
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { ClientWalletService } from '../services/ClientWalletService';
 import { useRouter } from 'next/navigation';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001';
 
 interface User {
   id: string;
-  // Remove the username property if it's not being used
 }
 
 interface AuthContextType {
@@ -27,28 +25,27 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const router = useRouter();
 
   useEffect(() => {
-    // Check if the user is already logged in
-    checkUserLoggedIn();
-  }, []);
-
-  const checkUserLoggedIn = async () => {
-    try {
-      const response = await fetch(`${API_URL}/api/auth/check`, {
-        credentials: 'include',
-      });
-      if (response.ok) {
-        const userData = await response.json();
-        setUser(userData);
-      } else {
+    const checkAuth = async () => {
+      try {
+        const response = await fetch(`${API_URL}/api/auth/check`, {
+          credentials: 'include',
+        });
+        if (response.ok) {
+          const userData = await response.json();
+          setUser(userData);
+        } else {
+          setUser(null);
+        }
+      } catch (error) {
+        console.error('Error checking auth status:', error);
         setUser(null);
+      } finally {
+        setLoading(false);
       }
-    } catch (error) {
-      console.error('Error checking user login status:', error);
-      setUser(null);
-    } finally {
-      setLoading(false);
-    }
-  };
+    };
+
+    checkAuth();
+  }, []);
 
   const signIn = async (mnemonic: string, passphrase: string) => {
     try {
@@ -119,7 +116,15 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   return (
     <AuthContext.Provider value={{ user, loading, signIn, signOut, signUp }}>
-      {children}
+      {loading ? (
+        <div className="min-h-screen bg-background flex items-center justify-center">
+          <div className="animate-pulse">
+            <div className="h-8 bg-gray-200 rounded w-32 mb-4"></div>
+          </div>
+        </div>
+      ) : (
+        children
+      )}
     </AuthContext.Provider>
   );
 };
