@@ -12,36 +12,36 @@ const Navigation: React.FC = () => {
   }
 
   return (
-    <nav className="bg-primary-orange p-4">
-      <div className="container mx-auto flex justify-between items-center">
-        <Link href="/" className="text-white text-2xl font-bold">
+    <nav className="header">
+      <div className="container mx-auto flex justify-between items-center px-4 py-3">
+        <Link href="/" className="text-white text-2xl font-bold hover:text-background-dark transition-colors">
           Bitcoin Document Vault
         </Link>
-        <div>
+        <div className="flex gap-4">
           {user ? (
             <>
-              <Link href="/dashboard" className="text-white mr-4">
+              <Link href="/dashboard" className="btn-nav">
                 Dashboard
               </Link>
-              <Link href="/documents" className="text-white mr-4">
+              <Link href="/documents" className="btn-nav">
                 Documents
               </Link>
-              <Link href="/wallet" className="text-white mr-4">
+              <Link href="/wallet" className="btn-nav">
                 Wallet
               </Link>
-              <Link href="/profile" className="text-white mr-4">
+              <Link href="/profile" className="btn-nav">
                 Profile
               </Link>
-              <button onClick={signOut} className="text-white">
+              <button onClick={signOut} className="btn-nav">
                 Logout
               </button>
             </>
           ) : (
             <>
-              <Link href="/login" className="text-white mr-4">
+              <Link href="/login" className="btn-outline">
                 Login
               </Link>
-              <Link href="/register" className="text-white">
+              <Link href="/register" className="btn-primary">
                 Register
               </Link>
             </>

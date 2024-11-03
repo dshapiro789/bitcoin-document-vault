@@ -12,10 +12,12 @@ interface FeatureCardProps {
 
 function FeatureCard({ icon, title, description }: FeatureCardProps) {
   return (
-    <div className="bg-white p-4 rounded-lg shadow-md text-center hover:shadow-lg transition duration-300">
-      {icon}
-      <h3 className="text-lg font-semibold mb-1">{title}</h3>
-      <p className="text-sm text-gray-600">{description}</p>
+    <div className="card hover:shadow-lg transition duration-300 flex flex-col items-center text-center">
+      <div className="text-primary text-3xl mb-4 flex justify-center">
+        {icon}
+      </div>
+      <h3 className="text-lg font-semibold mb-2">{title}</h3>
+      <p className="text-text-light">{description}</p>
     </div>
   );
 }
@@ -51,7 +53,7 @@ function PricingTier({ tier, price, features }: { tier: string, price: string, f
           </li>
         ))}
       </ul>
-      <button className="mt-6 bg-primary-orange text-white px-6 py-2 rounded-full text-lg font-semibold hover:bg-orange-600 transition duration-300">
+      <button className="btn-primary mt-6 w-full">
         Choose Plan
       </button>
     </div>
@@ -66,7 +68,7 @@ export default function Home() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-5xl font-bold mb-4 text-primary-orange"
+          className="text-5xl font-bold mb-4 text-primary"
         >
           Welcome to BTC Doc Vault
         </motion.h1>
@@ -83,10 +85,10 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.8 }}
         >
-          <Link href="/register" className="bg-primary-orange text-white px-6 py-2 rounded-full text-lg font-semibold hover:bg-orange-600 transition duration-300 mr-4">
+          <Link href="/register" className="btn-primary mr-4">
             Get Started
           </Link>
-          <Link href="/login" className="bg-white text-primary-orange border border-primary-orange px-6 py-2 rounded-full text-lg font-semibold hover:bg-orange-50 transition duration-300">
+          <Link href="/login" className="btn-outline">
             Login
           </Link>
         </motion.div>
@@ -96,22 +98,22 @@ export default function Home() {
         <h2 className="text-3xl font-bold text-center mb-12">Why Choose BTC Doc Vault?</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <FeatureCard 
-            icon={<FiShield className="text-3xl mb-2 text-primary-orange mx-auto" />}
+            icon={<FiShield className="text-3xl text-primary" />}
             title="Privacy First"
             description="Your documents are encrypted and only accessible by you."
           />
           <FeatureCard 
-            icon={<FiKey className="text-3xl mb-2 text-primary-orange mx-auto" />}
+            icon={<FiKey className="text-3xl text-primary" />}
             title="Bitcoin-Based Authentication"
             description="Use a Bitcoin seed and a custom passphrase to maintain control over your account credentials."
           />
           <FeatureCard 
-            icon={<FiGithub className="text-3xl mb-2 text-primary-orange mx-auto" />}
+            icon={<FiGithub className="text-3xl text-primary" />}
             title="Open Source Transparency"
             description="Our code is open source, ensuring transparency and community-driven security improvements."
           />
           <FeatureCard 
-            icon={<FiUser className="text-3xl mb-2 text-primary-orange mx-auto" />}
+            icon={<FiUser className="text-3xl text-primary" />}
             title="No Personal Information Required"
             description="Register and log in without providing an email address or personal details, preserving your anonymity."
           />
@@ -127,8 +129,8 @@ export default function Home() {
       </div>
 
       <div className="container mx-auto px-4 py-16 mt-8 text-center">
-        <h2 className="text-3xl font-bold mb-6 text-primary-orange">Ready to Secure Your Documents?</h2>
-        <Link href="/register" className="inline-block bg-primary-orange text-white px-8 py-3 rounded-full text-xl font-semibold hover:bg-orange-600 transition duration-300">
+        <h2 className="text-3xl font-bold mb-6 text-primary">Ready to Secure Your Documents?</h2>
+        <Link href="/register" className="btn-primary inline-block text-xl">
           Get Started Now
         </Link>
       </div>

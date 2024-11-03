@@ -2,4 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply bg-background text-text;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary-dark transition-colors;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-primary text-primary px-6 py-2 rounded-lg hover:bg-primary hover:text-white transition-colors;
+  }
+
+  .nav-link {
+    @apply text-text hover:text-primary transition-colors;
+  }
+
+  .header {
+    @apply bg-primary text-white;
+  }
+
+  .card {
+    @apply bg-white p-6 rounded-lg shadow-md;
+  }
+}
+
 /* Your custom CSS below this line */

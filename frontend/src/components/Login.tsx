@@ -35,33 +35,30 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-lg">
-      <h2 className="text-3xl font-bold mb-6 text-orange-500">Login</h2>
+    <div className="card max-w-md mx-auto mt-10">
+      <h2 className="text-3xl font-bold mb-6 text-primary">Login</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label className="block mb-1 text-orange-500">Mnemonic:</label>
+          <label className="block mb-1 text-primary">Mnemonic:</label>
           <input
             type="text"
             value={mnemonic}
             onChange={(e) => setMnemonic(e.target.value)}
-            className="w-full p-2 border border-orange-300 rounded bg-white"
+            className="w-full p-2 border border-primary rounded bg-white focus:outline-none focus:ring-2 focus:ring-primary"
             required
           />
         </div>
         <div>
-          <label className="block mb-1 text-orange-500">Passphrase:</label>
+          <label className="block mb-1 text-primary">Passphrase:</label>
           <input
             type="password"
             value={passphrase}
             onChange={(e) => setPassphrase(e.target.value)}
-            className="w-full p-2 border border-orange-300 rounded bg-white"
+            className="w-full p-2 border border-primary rounded bg-white focus:outline-none focus:ring-2 focus:ring-primary"
             required
           />
         </div>
-        <button 
-          type="submit" 
-          className="w-full p-2 bg-orange-500 text-white rounded hover:bg-orange-600 transition duration-300"
-        >
+        <button type="submit" className="btn-primary w-full">
           Login
         </button>
       </form>
