@@ -14,6 +14,7 @@ import rateLimit from 'express-rate-limit';
 import { WalletService } from './services/walletService';
 import { WalletController } from './controllers/walletController';
 import connectDB from './config/database';
+import config from './config';
 
 // Load environment variables
 const envPath = path.resolve(__dirname, '..', '.env');
@@ -56,11 +57,10 @@ connectDB().then(() => {
 
 // Updated CORS configuration
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+  origin: [config.frontendUrl],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
-  exposedHeaders: ['Set-Cookie']
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 app.use(express.json());
