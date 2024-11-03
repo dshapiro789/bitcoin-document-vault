@@ -151,7 +151,7 @@ export default function Home() {
               />
             </div>
             <div className="flex-1 max-w-xl">
-              <p className="text-lg mb-3">Donate to further development via Bitcoin:</p>
+              <p className="text-lg mb-3">Donate to further development via Bitcoin (Silent Payment Address):</p>
               <div className="bg-white p-4 rounded-lg shadow-md break-all text-sm font-mono">
                 sp1qqdak9clmvgxtrvcf36uwr93gddwwsyt734tsyemtf4xseeatxjuuwqm95sd7cctpt4ratnyg48c3n05ug5d5zfewlhf5kkaqzwkapn9wds8uh2w6
               </div>
