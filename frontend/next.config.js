@@ -5,7 +5,9 @@ const nextConfig = {
   // Ensure static exports are handled correctly
   images: {
     unoptimized: true
-  }
+  },
+  output: 'standalone',
+  distDir: '.next'
 }
 
 module.exports = nextConfig
