@@ -2,7 +2,7 @@
   "version": 2,
   "framework": "nextjs",
   "root": "frontend",
-  "buildCommand": "cd frontend && npm install && npm run build",
-  "installCommand": "cd frontend && npm install",
+  "installCommand": "cd frontend && npm install --production=false",
+  "buildCommand": "cd frontend && npm run build",
   "outputDirectory": "frontend/.next"
 } 
