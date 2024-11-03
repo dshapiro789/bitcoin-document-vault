@@ -22,6 +22,7 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const router = useRouter();
 
   useEffect(() => {
@@ -39,6 +40,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       } catch (error) {
         console.error('Error checking auth status:', error);
         setUser(null);
+        setError('Unable to connect to server');
       } finally {
         setLoading(false);
       }
@@ -120,6 +122,19 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         <div className="min-h-screen bg-background flex items-center justify-center">
           <div className="animate-pulse">
             <div className="h-8 bg-gray-200 rounded w-32 mb-4"></div>
+          </div>
+        </div>
+      ) : error ? (
+        <div className="min-h-screen bg-background flex items-center justify-center">
+          <div className="text-red-500 text-center p-4">
+            {error}
+            <br />
+            <button 
+              onClick={() => window.location.reload()} 
+              className="mt-4 bg-primary text-white px-4 py-2 rounded"
+            >
+              Retry
+            </button>
           </div>
         </div>
       ) : (
