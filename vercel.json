@@ -1,12 +1,7 @@
 {
-    "version": 2,
-    "buildCommand": "cd frontend && npm ci && npm run build",
-    "installCommand": "cd frontend && npm ci",
-    "outputDirectory": "frontend/.next",
-    "builds": [
-      {
-        "src": "frontend/package.json",
-        "use": "@vercel/next"
-      }
-    ]
-  }
+  "version": 2,
+  "buildCommand": "cd frontend && npm ci && npm run build",
+  "installCommand": "cd frontend && npm ci",
+  "outputDirectory": "frontend/.next",
+  "framework": "nextjs"
+}
