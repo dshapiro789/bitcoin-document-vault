@@ -10,7 +10,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "vercel-build": "next build"
+    "vercel-build": "npm install tailwindcss postcss autoprefixer && next build"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.39.0",
