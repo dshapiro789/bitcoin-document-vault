@@ -18,7 +18,17 @@ const Login: React.FC = () => {
   }, [loading, user, router]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="container mx-auto px-4 py-8">
+        <div className="card max-w-md mx-auto mt-10 text-center">
+          <div className="animate-pulse">
+            <div className="h-8 bg-gray-200 rounded w-1/2 mx-auto mb-6"></div>
+            <div className="h-4 bg-gray-200 rounded mb-4"></div>
+            <div className="h-4 bg-gray-200 rounded mb-4"></div>
+          </div>
+        </div>
+      </div>
+    );
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -35,34 +45,42 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div className="card max-w-md mx-auto mt-10">
-      <h2 className="text-3xl font-bold mb-6 text-primary">Login</h2>
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div>
-          <label className="block mb-1 text-primary">Mnemonic:</label>
-          <input
-            type="text"
-            value={mnemonic}
-            onChange={(e) => setMnemonic(e.target.value)}
-            className="w-full p-2 border border-primary rounded bg-white focus:outline-none focus:ring-2 focus:ring-primary"
-            required
-          />
-        </div>
-        <div>
-          <label className="block mb-1 text-primary">Passphrase:</label>
-          <input
-            type="password"
-            value={passphrase}
-            onChange={(e) => setPassphrase(e.target.value)}
-            className="w-full p-2 border border-primary rounded bg-white focus:outline-none focus:ring-2 focus:ring-primary"
-            required
-          />
-        </div>
-        <button type="submit" className="btn-primary w-full">
-          Login
-        </button>
-      </form>
-      {error && <div className="text-red-500 mt-4">{error}</div>}
+    <div className="container mx-auto px-4 py-8">
+      <div className="card max-w-md mx-auto mt-10">
+        <h2 className="text-3xl font-bold mb-6 text-primary">Login</h2>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <label className="block mb-1 text-primary">Mnemonic:</label>
+            <input
+              type="text"
+              value={mnemonic}
+              onChange={(e) => setMnemonic(e.target.value)}
+              className="w-full p-2 border border-primary rounded bg-white focus:outline-none focus:ring-2 focus:ring-primary"
+              required
+              placeholder="Enter your mnemonic phrase"
+            />
+          </div>
+          <div>
+            <label className="block mb-1 text-primary">Passphrase:</label>
+            <input
+              type="password"
+              value={passphrase}
+              onChange={(e) => setPassphrase(e.target.value)}
+              className="w-full p-2 border border-primary rounded bg-white focus:outline-none focus:ring-2 focus:ring-primary"
+              required
+              placeholder="Enter your passphrase"
+            />
+          </div>
+          <button type="submit" className="btn-primary w-full py-3">
+            Login
+          </button>
+        </form>
+        {error && (
+          <div className="mt-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded">
+            {error}
+          </div>
+        )}
+      </div>
     </div>
   );
 }
