@@ -3,7 +3,12 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001';
+// Get API URL from environment or fallback
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
+if (!API_URL) {
+  console.error('NEXT_PUBLIC_API_URL is not defined in environment variables');
+}
 
 interface User {
   id: string;
@@ -27,6 +32,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   useEffect(() => {
     const checkAuth = async () => {
+      if (!API_URL) {
+        setError('API URL not configured');
+        setLoading(false);
+        return;
+      }
+
       try {
         const response = await fetch(`${API_URL}/api/auth/check`, {
           credentials: 'include',
@@ -40,7 +51,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       } catch (error) {
         console.error('Error checking auth status:', error);
         setUser(null);
-        setError('Unable to connect to server');
+        setError('Unable to connect to server. Please try again later.');
       } finally {
         setLoading(false);
       }
