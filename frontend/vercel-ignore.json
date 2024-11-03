@@ -1,5 +1,0 @@
-{
-  "ignoreCommand": "git diff --quiet HEAD^ HEAD ./",
-  "installCommand": "npm ci",
-  "buildCommand": "npm run build"
-} 

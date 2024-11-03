@@ -4,5 +4,11 @@
   "root": "frontend",
   "buildCommand": "npm run build",
   "installCommand": "npm ci",
-  "outputDirectory": ".next"
+  "outputDirectory": ".next",
+  "builds": [
+    {
+      "src": "frontend/next.config.js",
+      "use": "@vercel/next"
+    }
+  ]
 } 
