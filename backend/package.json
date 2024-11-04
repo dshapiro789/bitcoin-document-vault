@@ -5,7 +5,7 @@
   "main": "dist/server.js",
   "scripts": {
     "dev": "nodemon src/server.ts",
-    "build": "tsc",
+    "build": "tsc && cp -r src/uploads dist/ || true",
     "start": "node dist/server.js",
     "postinstall": "npm run build",
     "update-passphrases": "ts-node src/scripts/updateUserPassphrases.ts"
