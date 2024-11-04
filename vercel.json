@@ -1,7 +1,7 @@
 {
   "version": 2,
   "framework": "nextjs",
-  "buildCommand": "cd frontend && npm ci --legacy-peer-deps && npm run build",
+  "buildCommand": "cd frontend && rm -rf node_modules .next && npm install && npm run build",
   "installCommand": null,
   "outputDirectory": "frontend/.next",
   "builds": [
@@ -9,5 +9,12 @@
       "src": "frontend/package.json",
       "use": "@vercel/next"
     }
-  ]
+  ],
+  "env": {
+    "NEXT_TELEMETRY_DISABLED": "1",
+    "NODE_ENV": "production",
+    "NEXT_PUBLIC_API_URL": "https://bitcoin-document-vault-production.up.railway.app",
+    "NEXT_PUBLIC_DEFAULT_NODE_URL": "https://blockstream.info/api",
+    "NEXT_PUBLIC_SUPABASE_URL": "https://ihwrykbshdooygzncqzr.supabase.co"
+  }
 } 
