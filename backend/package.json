@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "nodemon src/server.ts",
-    "build": "tsc && cp -r src/uploads dist/ || true",
+    "build": "rm -rf dist && tsc && cp -r src/uploads dist/ || true",
     "start": "node dist/server.js",
     "postinstall": "npm run build",
     "update-passphrases": "ts-node src/scripts/updateUserPassphrases.ts"
@@ -21,6 +21,7 @@
     "@types/crypto-js": "^4.2.2",
     "@types/express-session": "^1.17.0",
     "@types/mongoose": "^5.11.97",
+    "axios": "^1.6.2",
     "bcrypt": "^5.1.1",
     "bip32": "^4.0.0",
     "bip39": "^3.1.0",
@@ -35,6 +36,7 @@
     "express-rate-limit": "^7.4.0",
     "express-session": "^1.18.0",
     "framer-motion": "^11.5.4",
+    "ipfs-http-client": "^60.0.1",
     "jsonwebtoken": "^9.0.2",
     "limiter": "^2.1.0",
     "mongodb": "^6.9.0",

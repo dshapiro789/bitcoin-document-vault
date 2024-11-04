@@ -1,22 +1,21 @@
 import mongoose from 'mongoose';
-import dotenv from 'dotenv';
-import path from 'path';
 
-dotenv.config({ path: path.resolve(__dirname, '..', '.env') });
-
-async function dropUsersCollection() {
+async function dropCollection() {
   try {
-    await mongoose.connect(process.env.MONGODB_URI!);
-    console.log('Connected to MongoDB');
+    // Ensure connection exists
+    if (!mongoose.connection || !mongoose.connection.db) {
+      throw new Error('Database connection not established');
+    }
 
+    // Drop the collection
     await mongoose.connection.db.collection('users').drop();
     console.log('Users collection dropped successfully');
   } catch (error) {
-    console.error('Error dropping users collection:', error);
+    console.error('Error dropping collection:', error);
   } finally {
-    await mongoose.disconnect();
-    console.log('Disconnected from MongoDB');
+    // Close the connection
+    await mongoose.connection.close();
   }
 }
 
-dropUsersCollection();
+export default dropCollection;
