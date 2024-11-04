@@ -4,6 +4,10 @@ const config = {
   frontendUrl: process.env.NODE_ENV === 'production'
     ? 'https://bitcoin-document-vault-tan.vercel.app'
     : 'http://localhost:3000',
+  corsOrigins: [
+    'https://bitcoin-document-vault-tan.vercel.app',
+    'http://localhost:3000'
+  ],
   mongodbUri: process.env.MONGODB_URI,
   defaultNodeUrl: process.env.DEFAULT_NODE_URL,
   supabase: {

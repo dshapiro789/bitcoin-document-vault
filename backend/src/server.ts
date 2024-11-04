@@ -57,7 +57,7 @@ connectDB().then(() => {
 
 // Updated CORS configuration
 app.use(cors({
-  origin: [config.frontendUrl],
+  origin: config.corsOrigins,
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
