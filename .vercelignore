@@ -1,7 +1,8 @@
+README.md
 .git
+backend
+node_modules
 .env
 .env.*
-node_modules
 .next
-.vercel
-backend 
+.vercel 
